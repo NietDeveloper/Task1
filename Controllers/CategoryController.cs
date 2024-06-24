@@ -12,6 +12,7 @@ namespace Task1.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             List<Category> categories = _context.Category.ToList();
