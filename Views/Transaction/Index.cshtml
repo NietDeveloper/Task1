@@ -1,0 +1,28 @@
+﻿@model List<Transaction>
+<div>
+    <a type="button" class="btn btn-primary " asp-action="Create" asp-controller="Transaction">Create</a>
+    <a type="button" class="btn btn-primary " asp-action="AllTransaction" asp-controller="Transaction">All Transaction</a>
+    <table class="table table-striped table-bordered text-center mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Create date</th>
+                <th>Category Name</th>
+                <th>Sum</th>
+                <th>Comentary</th>
+            </tr>
+        </thead>
+        <tbody class="align-items-center">
+            @foreach (var transactio in Model)
+            {
+                <tr>
+                    <td>@transactio.Id</td>
+                    <td>@transactio.CreateDate</td>
+                    <td>@transactio.Category.Name</td>
+                    <td>@transactio.Sum</td>
+                    <td>@transactio.Comment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
